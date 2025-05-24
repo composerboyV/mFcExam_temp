@@ -3,6 +3,7 @@
 //
 
 #pragma once
+#include "CDlgImage.h"
 
 
 // CgPrjDlg 대화 상자
@@ -11,6 +12,9 @@ class CgPrjDlg : public CDialogEx
 // 생성입니다.
 public:
 	CgPrjDlg(CWnd* pParent = nullptr);	// 표준 생성자입니다.
+
+	CDlgImage *m_pDlgImage;
+
 
 // 대화 상자 데이터입니다.
 #ifdef AFX_DESIGN_TIME
@@ -33,4 +37,8 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedBtnDlg();
+	afx_msg void OnDestroy();
+	afx_msg void OnBnClickedOk();
+
+	void	callFunc(int n);
 };
